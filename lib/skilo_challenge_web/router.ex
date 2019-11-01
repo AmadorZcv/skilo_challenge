@@ -5,6 +5,8 @@ defmodule SkiloChallengeWeb.Router do
     plug :accepts, ["json"]
   end
 
+  forward "/graphiql", Absinthe.Plug.GraphiQL, schema: SkiloChallengeWeb.Schema
+
   scope "/api", SkiloChallengeWeb do
     pipe_through :api
   end

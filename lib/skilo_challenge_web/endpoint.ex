@@ -18,5 +18,4 @@ defmodule SkiloChallengeWeb.Endpoint do
   plug Absinthe.Plug,
     schema: SkiloChallengeWeb.Schema
 
-  plug Absinthe.Plug.GraphiQL, schema: SkiloChallengeWeb.Schema
 end

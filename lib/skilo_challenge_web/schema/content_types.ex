@@ -12,6 +12,6 @@ defmodule SkiloChallengeWeb.Schema.ContentTypes do
     field :uuid, :id
     field :address, :id
     field :amount, :float
-    field :when, :datetime
+    field :when, :naive_datetime
   end
 end

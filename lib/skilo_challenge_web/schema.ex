@@ -18,5 +18,13 @@ defmodule SkiloChallengeWeb.Schema do
 
       resolve(&Resolvers.Account.open_account/3)
     end
+
+    @desc "Transfer Money"
+    field :transfer_money, type: :transaction do
+      arg(:amount, non_null(:float))
+      arg(:sender, non_null(:id))
+      arg(:address, non_null(:id))
+      resolve(&Resolvers.Transaction.make_transaction/3)
+    end
   end
 end

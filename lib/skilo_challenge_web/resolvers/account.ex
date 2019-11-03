@@ -17,7 +17,6 @@ defmodule SkiloChallengeWeb.Resolvers.Account do
   # Transformar o balance em float Ex: 45.5 para o Integer que o banco aceita
   def balance_to_integer(balance) do
     {:ok, %{amount: amount, currency: _}} = Money.parse(balance, :BRL)
-    IO.inspect(amount)
     amount
   end
 
@@ -29,7 +28,6 @@ defmodule SkiloChallengeWeb.Resolvers.Account do
         {:ok, to_graphql(account)}
 
       {:error, changeset} ->
-        IO.inspect(changeset)
         {:error, "Invalid Balance"}
     end
   end

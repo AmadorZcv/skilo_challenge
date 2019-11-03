@@ -26,7 +26,7 @@ defmodule SkiloChallenge.Accounts do
     |> Repo.update()
   end
 
-  def transaction(sender_id, address_id, amount) do
+  def make_transaction(sender_id, address_id, amount) do
     Repo.transaction(fn ->
       # Removing balance from sender
       change_account_balance(sender_id, -amount)

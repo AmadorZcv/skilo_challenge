@@ -15,5 +15,6 @@ defmodule SkiloChallenge.Accounts.Transaction do
     |> cast(attrs, [:amount, :sender_id, :address_id])
     |> validate_required([:amount, :sender_id, :address_id])
     |> check_constraint(:amount, name: :amount_greater_than_0)
+    |> check_constraint(:sender, name: :sender_different_than_address)
   end
 end

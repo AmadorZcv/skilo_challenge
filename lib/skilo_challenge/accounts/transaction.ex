@@ -10,8 +10,8 @@ defmodule SkiloChallenge.Accounts.Transaction do
     timestamps()
   end
 
-  def changeset(account, attrs) do
-    account
+  def changeset(transaction, attrs) do
+    transaction
     |> cast(attrs, [:amount, :sender_id, :address_id])
     |> validate_required([:amount, :sender_id, :address_id])
     |> check_constraint(:amount, name: :amount_greater_than_0)

@@ -4,7 +4,7 @@ defmodule SkiloChallenge.Accounts do
   alias SkiloChallenge.Accounts.Transaction
 
   def list_accounts() do
-    []
+    Repo.all(Account)
   end
 
   def open_account(balance) do

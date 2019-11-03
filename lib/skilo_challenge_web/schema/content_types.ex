@@ -4,7 +4,7 @@ defmodule SkiloChallengeWeb.Schema.ContentTypes do
 
   object :account do
     field :uuid, :id
-    field :currentBalance, :float
+    field :current_balance, :float
     field :transactions, list_of(:transaction)
   end
 

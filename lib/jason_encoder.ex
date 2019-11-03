@@ -4,10 +4,6 @@ defimpl Jason.Encoder, for: Money do
       Money.to_string(struct, symbol: false, separator: "", delimiter: ".")
       |> String.to_float()
 
-    IO.puts(
-      "my String sis #{Money.to_string(struct, symbol: false, separator: "", delimiter: ".")}"
-    )
-
     Jason.Encode.float(amount)
   end
 end

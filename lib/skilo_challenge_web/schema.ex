@@ -10,4 +10,13 @@ defmodule SkiloChallengeWeb.Schema do
       resolve(&Resolvers.Account.list_accounts/3)
     end
   end
+
+  mutation do
+    @desc "Open a Account"
+    field :open_account, type: :account do
+      arg(:balance, non_null(:float))
+
+      resolve(&Resolvers.Account.open_account/3)
+    end
+  end
 end
